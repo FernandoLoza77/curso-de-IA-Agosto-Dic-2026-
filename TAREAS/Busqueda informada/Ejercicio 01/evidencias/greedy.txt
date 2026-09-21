@@ -1,0 +1,19 @@
+python 03_greedy_best_first_search.py --from-city Oradea --to Bucharest
+
+Algorithm: Greedy best-first search
+Problem:   Oradea → Bucharest
+Heuristic: straight-line distance to Bucharest (AIMA table)
+Status:    success
+Path:      Oradea → Sibiu → Fagaras → Bucharest
+Depth:     3 roads
+Cost:      461 km
+
+  city                  g     h     f
+  Oradea                   0   380   380
+  Sibiu                  151   253   404
+  Fagaras                250   176   426
+  Bucharest              461     0   461
+
+Expanded:  3 nodes
+Generated: 9 nodes
+Frontier:  max size 4

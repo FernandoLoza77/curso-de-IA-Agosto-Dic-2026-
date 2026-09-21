@@ -1,0 +1,25 @@
+python 02_heuristics.py --from-city Oradea --to Bucharest
+
+Heuristic: straight-line distance to Bucharest (AIMA table)
+
+  h(n)  city
+      0  Bucharest  <- goal
+     77  Giurgiu
+     80  Urziceni
+    100  Pitesti
+    151  Hirsova
+    160  Craiova
+    161  Eforie
+    176  Fagaras
+    193  Rimnicu Vilcea
+    199  Vaslui
+    226  Iasi
+    234  Neamt
+    241  Mehadia
+    242  Drobeta
+    244  Lugoj
+    253  Sibiu
+    329  Timisoara
+    366  Arad
+    374  Zerind
+    380  Oradea  <- start

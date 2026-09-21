@@ -1,0 +1,20 @@
+python 04_a_star_search.py --from-city Oradea --to Bucharest
+
+Algorithm: A* search
+Problem:   Oradea → Bucharest
+Heuristic: straight-line distance to Bucharest (AIMA table)
+Status:    success
+Path:      Oradea → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
+Depth:     4 roads
+Cost:      429 km
+
+  city                  g     h     f
+  Oradea                   0   380   380
+  Sibiu                  151   253   404
+  Rimnicu Vilcea         231   193   424
+  Pitesti                328   100   428
+  Bucharest              429     0   429
+
+Expanded:  5 nodes
+Generated: 15 nodes
+Frontier:  max size 5

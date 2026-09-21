@@ -1,0 +1,11 @@
+Algorithm: A*
+From:      Mexico City (Mexico City; id=0)
+To:        Monterrey (Nuevo León; id=10)
+Heuristic: haversine al destino x 0.998517792300 (ajuste por redondeo)
+Status:    success
+Path:      Mexico City[0] -> Gustavo Adolfo Madero[8] -> Puerto Escondido (Tepeolulco Puerto Escondido)[800] -> Coacalco[66] -> San Pablo de las Salinas[96] -> Santa Ana Nextlalpan[596] -> Paseos de San Juan[854] -> Tizayuca[227] -> Don Antonio[503] -> Acayuca[997] -> Pachuca de Soto[71] -> Zacualtipán[413] -> Huejutla de Reyes[246] -> Tempoal de Sánchez[705] -> El Higo[999] -> Pánuco[242] -> Ébano[391] -> Ursulo Galván[726] -> González[765] -> Soto la Marina[805] -> San Fernando[323] -> Ciudad Río Bravo[133] -> Reynosa[31] -> Camargo[851] -> China[941] -> Cadereyta Jiménez[168] -> Jardines de la Silla (Jardines)[200] -> Monterrey[10]
+Depth:     27 hops
+Cost:      1041.87 km
+Expanded:  428
+Generated: 2174
+Frontier:  56 (max)

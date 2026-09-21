@@ -1,0 +1,11 @@
+python 03_uniform_cost_search.py --from-city Oradea --to Bucharest
+
+Algorithm: Uniform-cost search
+Problem:   Oradea → Bucharest
+Status:    success
+Path:      Oradea → Sibiu → Rimnicu Vilcea → Pitesti → Bucharest
+Depth:     4 roads
+Cost:      429 km
+Expanded:  10 nodes
+Generated: 27 nodes
+Frontier:  max size 4
