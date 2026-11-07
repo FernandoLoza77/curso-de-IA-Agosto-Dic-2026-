@@ -1,0 +1,139 @@
+======================================================================
+BASE DE LA BIBLIOTECA (sin cambios)
+======================================================================
+
+##### AccesoNoche(Ana) -- HACIA ADELANTE
+Hechos iniciales: Estudiante(Ana), Estudiante(Luis), Profesor(Marta), TieneCredencial(Ana), TieneCredencial(Marta), HorarioNocturno(Hoy)
+Consulta: AccesoNoche(Ana)
+--- ronda 1 ---
+Dispara R_miembro_est {x/Ana} => Miembro(Ana)
+Dispara R_miembro_prof {x/Marta} => Miembro(Marta)
+Dispara R_beca {x/Ana} => Becario(Ana)
+--- ronda 2 ---
+Dispara R_acceso {x/Ana} => AccesoNoche(Ana)
+Dispara R_acceso {x/Marta} => AccesoNoche(Marta)
+--- ronda 3 ---
+Nada nuevo: se detiene.
+Atomos nuevos: Miembro(Ana), Miembro(Marta), Becario(Ana), AccesoNoche(Ana), AccesoNoche(Marta)
+RESULTADO: probada
+
+##### AccesoNoche(Ana) -- HACIA ATRAS
+Consulta: AccesoNoche(Ana)
+meta   AccesoNoche(Ana)
+regla  R_acceso {x/Ana}
+  meta   Miembro(Ana)
+  regla  R_miembro_est {x/Ana}
+    meta   Estudiante(Ana)
+    hecho  Estudiante(Ana)
+    meta   TieneCredencial(Ana)
+    hecho  TieneCredencial(Ana)
+  meta   HorarioNocturno(Hoy)
+  hecho  HorarioNocturno(Hoy)
+RESULTADO: probada
+
+##### AccesoNoche(Luis) -- HACIA ADELANTE
+Hechos iniciales: Estudiante(Ana), Estudiante(Luis), Profesor(Marta), TieneCredencial(Ana), TieneCredencial(Marta), HorarioNocturno(Hoy)
+Consulta: AccesoNoche(Luis)
+--- ronda 1 ---
+Dispara R_miembro_est {x/Ana} => Miembro(Ana)
+Dispara R_miembro_prof {x/Marta} => Miembro(Marta)
+Dispara R_beca {x/Ana} => Becario(Ana)
+--- ronda 2 ---
+Dispara R_acceso {x/Ana} => AccesoNoche(Ana)
+Dispara R_acceso {x/Marta} => AccesoNoche(Marta)
+--- ronda 3 ---
+Nada nuevo: se detiene.
+Atomos nuevos: Miembro(Ana), Miembro(Marta), Becario(Ana), AccesoNoche(Ana), AccesoNoche(Marta)
+RESULTADO: NO probada
+
+##### AccesoNoche(Luis) -- HACIA ATRAS
+Consulta: AccesoNoche(Luis)
+meta   AccesoNoche(Luis)
+regla  R_acceso {x/Luis}
+  meta   Miembro(Luis)
+  regla  R_miembro_est {x/Luis}
+    meta   Estudiante(Luis)
+    hecho  Estudiante(Luis)
+    meta   TieneCredencial(Luis)
+    falla  TieneCredencial(Luis)
+  regla  R_miembro_prof {x/Luis}
+    meta   Profesor(Luis)
+    falla  Profesor(Luis)
+  falla  Miembro(Luis)
+falla  AccesoNoche(Luis)
+RESULTADO: NO probada
+
+##### AccesoNoche(Marta) -- HACIA ADELANTE
+Hechos iniciales: Estudiante(Ana), Estudiante(Luis), Profesor(Marta), TieneCredencial(Ana), TieneCredencial(Marta), HorarioNocturno(Hoy)
+Consulta: AccesoNoche(Marta)
+--- ronda 1 ---
+Dispara R_miembro_est {x/Ana} => Miembro(Ana)
+Dispara R_miembro_prof {x/Marta} => Miembro(Marta)
+Dispara R_beca {x/Ana} => Becario(Ana)
+--- ronda 2 ---
+Dispara R_acceso {x/Ana} => AccesoNoche(Ana)
+Dispara R_acceso {x/Marta} => AccesoNoche(Marta)
+--- ronda 3 ---
+Nada nuevo: se detiene.
+Atomos nuevos: Miembro(Ana), Miembro(Marta), Becario(Ana), AccesoNoche(Ana), AccesoNoche(Marta)
+RESULTADO: probada
+
+##### AccesoNoche(Marta) -- HACIA ATRAS
+Consulta: AccesoNoche(Marta)
+meta   AccesoNoche(Marta)
+regla  R_acceso {x/Marta}
+  meta   Miembro(Marta)
+  regla  R_miembro_est {x/Marta}
+    meta   Estudiante(Marta)
+    falla  Estudiante(Marta)
+  regla  R_miembro_prof {x/Marta}
+    meta   Profesor(Marta)
+    hecho  Profesor(Marta)
+  meta   HorarioNocturno(Hoy)
+  hecho  HorarioNocturno(Hoy)
+RESULTADO: probada
+
+Resumen:
+  AccesoNoche(Ana)       adelante: si   atras: si
+  AccesoNoche(Luis)      adelante: no   atras: no
+  AccesoNoche(Marta)     adelante: si   atras: si
+
+======================================================================
+EXPERIMENTO: base + TieneCredencial(Luis)
+======================================================================
+
+##### AccesoNoche(Luis) -- HACIA ADELANTE
+Hechos iniciales: Estudiante(Ana), Estudiante(Luis), Profesor(Marta), TieneCredencial(Ana), TieneCredencial(Marta), HorarioNocturno(Hoy), TieneCredencial(Luis)
+Consulta: AccesoNoche(Luis)
+--- ronda 1 ---
+Dispara R_miembro_est {x/Ana} => Miembro(Ana)
+Dispara R_miembro_est {x/Luis} => Miembro(Luis)
+Dispara R_miembro_prof {x/Marta} => Miembro(Marta)
+Dispara R_beca {x/Ana} => Becario(Ana)
+Dispara R_beca {x/Luis} => Becario(Luis)
+--- ronda 2 ---
+Dispara R_acceso {x/Ana} => AccesoNoche(Ana)
+Dispara R_acceso {x/Luis} => AccesoNoche(Luis)
+Dispara R_acceso {x/Marta} => AccesoNoche(Marta)
+--- ronda 3 ---
+Nada nuevo: se detiene.
+Atomos nuevos: Miembro(Ana), Miembro(Luis), Miembro(Marta), Becario(Ana), Becario(Luis), AccesoNoche(Ana), AccesoNoche(Luis), AccesoNoche(Marta)
+RESULTADO: probada
+
+##### AccesoNoche(Luis) -- HACIA ATRAS
+Consulta: AccesoNoche(Luis)
+meta   AccesoNoche(Luis)
+regla  R_acceso {x/Luis}
+  meta   Miembro(Luis)
+  regla  R_miembro_est {x/Luis}
+    meta   Estudiante(Luis)
+    hecho  Estudiante(Luis)
+    meta   TieneCredencial(Luis)
+    hecho  TieneCredencial(Luis)
+  meta   HorarioNocturno(Hoy)
+  hecho  HorarioNocturno(Hoy)
+RESULTADO: probada
+
+Resumen:
+  AccesoNoche(Luis)      adelante: si   atras: si
+
